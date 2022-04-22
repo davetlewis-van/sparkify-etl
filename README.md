@@ -9,9 +9,19 @@ The purpose of this project is to define and populate an analytics database for 
 ## Getting started with the project
 
 1. Clone or fork the repository.
-2. Create a virutal environment and run a requirements.txt command to install dependancies
-3. For the jupyter notebook files, run ...
-4. For the .py files, run ...
+2. Create and activate a virtual environment in the repository directory. For example:
+   ```
+    python3 -m venv .venv
+    source .venv/bin/activate
+   ```
+3. Install the Python package requirements:
+
+   ```
+    python3 -m pip install -r requirements.txt
+   ```
+
+4. For the jupyter notebook files, run ...
+5. For the .py files, run ...
 
 ## Source Data
 
@@ -28,7 +38,8 @@ The following files implement the extract, transform, load (ETL) pipline for the
 - `sql_queries.py` - Contains all of the SQL code used in the pipeline including SQL queries to create and drop the data model tables and insert data into the tables.
 - `create_tables.py` - Script to automate the process of deleting ETL tables from the previous run and creating the required tables for the Sparkify data model.
 - `etl.ipynb` - Runs the ETL process for a single record in each table. Implements functions to extract data from the `log_data` and `song_data` files, transform the data to the required format for the data schema, and insert the data into the appropriate tables in the Sparkify database.
-- `etl.py` - Runs the ETL process on all files in the `log_data` and `song_data` subfolders. Implements functions to extract data from the `log_data` and `song_data` files, transform the data to the required format for the data schema, and insert the data into the appropriate tables in the Sparkify database. - test.ipynb`- Contains tests to ensure that the `INSERT` statments are adding the intended values to tables, and checks for primary keys, column types, and constraints.
+- `etl.py` - Runs the ETL process on all files in the `log_data` and `song_data` subfolders. Implements functions to extract data from the `log_data` and `song_data` files, transform the data to the required format for the data schema, and insert the data into the appropriate tables in the Sparkify database.
+- test.ipynb`- Contains tests to ensure that the `INSERT` statments are adding the intended values to tables, and checks for primary keys, column types, and constraints.
 
 ## Data Model
 
