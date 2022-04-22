@@ -34,6 +34,8 @@ The following files implement the extract, transform, load (ETL) pipline for the
 
 Here is the schema of our data model:
 
+![Sparkify ERD](erd.png)
+
 ### Songplays
 
 Fact table that contains a row for each song played.
