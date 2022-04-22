@@ -4,7 +4,7 @@ Welcome to our Sparkify ETL pipeline documentation!
 
 ## About this project
 
-The purpose of this project is to define and populate an analytics database for Sparkify data analysts to perform song play analysis.
+The purpose of this project is to define and populate an analytics database for Sparkify data analysts to use to perform their song play analysis. The project consists of the the following: - The `sparkifydb` database, a set of tables designed for performing efficient analytic queries. - Extract, Transform, Load (ETL) scripts to pull data from JSON files and load it into the database.
 
 ## Getting started with the project
 
@@ -20,8 +20,15 @@ The purpose of this project is to define and populate an analytics database for 
     python3 -m pip install -r requirements.txt
    ```
 
-4. For the jupyter notebook files, run ...
-5. For the .py files, run ...
+4. Run this first to create your database and tables.
+
+   `python3 sql_queries.py`
+
+   NOTE: You must have access to a local or remote PostgreSQL database server with permissions to create and drop databases.
+
+5. Run the [ETL pipeline files](#etl-pipeline-files):
+   - For the jupyter notebook files, enter `jupyter notebook` at your command prompt. Jupyter will open in a new browser window and you can navigate to the notebook files.
+   - For the .py files, enter `python3 <filename>.py` at your command prompt.
 
 ## Source Data
 
@@ -29,7 +36,53 @@ The source data for this project is two collections of JSON files from the Spark
 
 ### song_data
 
+A set of directories and JSON files with information about the songs available in the Sparkify app. This dataset is a subset of song data. Each file contains song and artist metadata.
+
+Sample song record:
+
+```
+{
+  "num_songs": 1,
+  "artist_id": "ARULZCI1241B9C8611",
+  "artist_latitude": null,
+  "artist_longitude": null,
+  "artist_location": "",
+  "artist_name": "Luna Orbit Project",
+  "song_id": "SOSWKAV12AB018FC91",
+  "title": "Midnight Star",
+  "duration": 335.51628,
+  "year": 0
+}
+```
+
 ### log_data
+
+A set of directories and JSON files that contain logs on user activity on the Sparkify app.
+
+Sample log record:
+
+```
+{
+    "artist":"Deas Vail",
+    "auth":"Logged In",
+    "firstName":"Elijah",
+    "gender":"M",
+    "itemInSession":0,
+    "lastName":"Davis",
+    "length":237.68771,
+    "level":"free",
+    "location":"Detroit-Warren-Dearborn, MI",
+    "method":"PUT",
+    "page":"NextSong",
+    "registration":1540772343796,
+    "sessionId":985,
+    "song":"Anything You Say (Unreleased Version)",
+    "status":200,
+    "ts":1543607664796,
+    "userAgent":"\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.77.4 (KHTML, like Gecko) Version/7.0.5 Safari/537.77.4\"",
+    "userId":"5"
+}
+```
 
 ## ETL pipline files
 
