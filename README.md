@@ -8,10 +8,10 @@ The purpose of this project is to define and populate an analytics database for 
 
 ## Getting started with the project
 
-    1. Clone or fork the repository.
-    2. Create a virutal environment and run a requirements.txt command to install dependancies
-    3. For the jupyter notebook files, run ...
-    4. For the .py files, run ...
+1. Clone or fork the repository.
+2. Create a virutal environment and run a requirements.txt command to install dependancies
+3. For the jupyter notebook files, run ...
+4. For the .py files, run ...
 
 ## Source Data
 
@@ -38,11 +38,11 @@ Here is the schema of our data model:
 
 Fact table that contains a row for each song played.
 
-| column      | type                     | description                      |
+| column      | type                     | notes                            |
 | ----------- | ------------------------ | -------------------------------- |
 | songplay_id | INT                      | Primary key.                     |
 | start_time  | TIMESTAMP WITH TIME ZONE | Not null and unique constraints. |
-| user_id     | bigint                   | Not null constraint.             |
+| user_id     | BIGINT                   | Not null constraint.             |
 | level       | VARCHAR                  |                                  |
 | song_id     | VARCHAR                  |                                  |
 | artist_id   | VARCHAR                  |                                  |
@@ -54,7 +54,7 @@ Fact table that contains a row for each song played.
 
 Dimension table that contains a row for each Sparkify user.
 
-| column     | type    | description |
+| column     | type    | notes       |
 | ---------- | ------- | ----------- |
 | user_id    | BIGINT  | Primary key |
 | first_name | VARCHAR |             |
@@ -90,7 +90,7 @@ Dimension table that contains a row for each artist in the Sparkify catalog.
 
 Dimension table that contains a row for each timestamp, with columns with pre-prosessed dimensions including day, month, and year to simplify and optimize date-based analytic queries.
 
-| column     | type                     | description  |
+| column     | type                     | notes        |
 | ---------- | ------------------------ | ------------ |
 | start_time | TIMESTAMP WITH TIME ZONE | Primary key. |
 | hour       | INT                      |              |
