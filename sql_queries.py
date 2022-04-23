@@ -11,7 +11,7 @@ time_table_drop = "DROP TABLE IF EXISTS time;"
 songplay_table_create = ("""
 CREATE TABLE IF NOT EXISTS songplays (
     songplay_id INT GENERATED ALWAYS AS IDENTITY, 
-    start_time TIMESTAMP WITH TIME ZONE NOT NULL UNIQUE, 
+    start_time TIMESTAMP NOT NULL UNIQUE, 
     user_id bigint NOT NULL, 
     level VARCHAR, 
     song_id VARCHAR, 
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS artists (
 
 time_table_create = ("""
 CREATE TABLE IF NOT EXISTS time (
-    start_time TIMESTAMP WITH TIME ZONE,
+    start_time TIMESTAMP,
     hour INT,
     day INT,
     week INT,
@@ -74,7 +74,6 @@ ALTER TABLE songplays ADD FOREIGN KEY (start_time) REFERENCES time(start_time);
 ALTER TABLE songplays ADD FOREIGN KEY (user_id) REFERENCES users(user_id);
 ALTER TABLE songplays ADD FOREIGN KEY (song_id) REFERENCES songs(song_id);
 ALTER TABLE songplays ADD FOREIGN KEY (artist_id) REFERENCES artists(artist_id);
--- ALTER TABLE songs ADD FOREIGN KEY (artist_id) REFERENCES artists(artist_id);
 """)
 
 # INSERT RECORDS
