@@ -20,13 +20,19 @@ The purpose of this project is to define and populate an analytics database for 
     python3 -m pip install -r requirements.txt
    ```
 
-4. Run this first to create your database and tables.
+4. Link your virtual environment with Jupyter:
+
+   ```
+   python3 -m ipykernel install --user --name=.venv
+   ```
+
+5. Run this first to create your database and tables.
 
    `python3 sql_queries.py`
 
-   NOTE: You must have access to a local or remote PostgreSQL database server with permissions to create and drop databases.
+   NOTE: You must have access to a local or remote PostgreSQL database server with permissions to create and drop databases. You can adjust your connection and login information as needed in the `create_database()` function.
 
-5. Run the [ETL pipeline files](#etl-pipeline-files):
+6. Run the [ETL pipeline files](#etl-pipeline-files):
    - For the jupyter notebook files, enter `jupyter notebook` at your command prompt. Jupyter will open in a new browser window and you can navigate to the notebook files.
    - For the .py files, enter `python3 <filename>.py` at your command prompt.
 
