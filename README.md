@@ -101,7 +101,7 @@ The following files implement the extract, transform, load (ETL) pipeline for th
 - `create_tables.py` - Script to automate the process of deleting ETL tables from the previous run and creating the required tables for the Sparkify data model.
 - `etl.ipynb` - Runs the ETL process for a single record in each table. Implements functions to extract data from the `log_data` and `song_data` files, transform the data to the required format for the data schema, and insert the data into the appropriate tables in the Sparkify database.
 - `etl.py` - Runs the ETL process on all files in the `log_data` and `song_data` subfolders. Implements functions to extract data from the `log_data` and `song_data` directory files, transform the data to the required format for the data schema, and insert the data into the appropriate tables in the Sparkify database.
-- test.ipynb`- Contains tests to ensure that the `INSERT` statements are adding the intended values to tables, and checks for primary keys, column types, and constraints. You must restart your Jupyter Notebook kernel (Kernel > Restart) to close the database connection before you run the other ETL project files.
+- `test.ipynb`- Contains tests to ensure that the `INSERT` statements are adding the intended values to tables, and checks for primary keys, column types, and constraints. You must restart your Jupyter Notebook kernel (**Kernel** > **Restart**) to close the database connection before you run the other ETL project files.
 
 ## Data Model
 
