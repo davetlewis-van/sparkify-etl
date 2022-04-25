@@ -1,10 +1,13 @@
-# Sparkify ETL Pipleine
+# Sparkify ETL Pipeline
 
 Welcome to our Sparkify ETL pipeline documentation!
 
 ## About this project
 
-The purpose of this project is to define and populate an analytics database for Sparkify data analysts to use to perform their song play analysis. The project consists of the the following: - The `sparkifydb` database, a set of tables designed for performing efficient analytic queries. - Extract, Transform, Load (ETL) scripts to pull data from JSON files and load it into the database.
+The purpose of this project is to define and populate an analytics database for Sparkify data analysts to use to perform their song play analysis. The project consists of the following:
+
+- The `sparkifydb` database, a set of tables designed for performing efficient analytic queries.
+- Extract, Transform, Load (ETL) scripts to pull data from JSON files and load it into the database.
 
 ## Getting started with the project
 
@@ -90,15 +93,15 @@ Sample log record:
 }
 ```
 
-## ETL pipline files
+## ETL pipeline files
 
-The following files implement the extract, transform, load (ETL) pipline for the Sparkify data model:
+The following files implement the extract, transform, load (ETL) pipeline for the Sparkify data model:
 
 - `sql_queries.py` - Contains all of the SQL code used in the pipeline including SQL queries to create and drop the data model tables and insert data into the tables.
 - `create_tables.py` - Script to automate the process of deleting ETL tables from the previous run and creating the required tables for the Sparkify data model.
 - `etl.ipynb` - Runs the ETL process for a single record in each table. Implements functions to extract data from the `log_data` and `song_data` files, transform the data to the required format for the data schema, and insert the data into the appropriate tables in the Sparkify database.
 - `etl.py` - Runs the ETL process on all files in the `log_data` and `song_data` subfolders. Implements functions to extract data from the `log_data` and `song_data` directory files, transform the data to the required format for the data schema, and insert the data into the appropriate tables in the Sparkify database.
-- test.ipynb`- Contains tests to ensure that the `INSERT` statments are adding the intended values to tables, and checks for primary keys, column types, and constraints. You must restart your Jupyter Notebook kernel (Kernel > Restart) to close the database connection before you run the other ETL project files.
+- test.ipynb`- Contains tests to ensure that the `INSERT` statements are adding the intended values to tables, and checks for primary keys, column types, and constraints. You must restart your Jupyter Notebook kernel (Kernel > Restart) to close the database connection before you run the other ETL project files.
 
 ## Data Model
 
@@ -142,7 +145,7 @@ Dimension table that contains a row for each song in the Sparkify catalog.
 | --------- | ------- | -------------------- |
 | song_id   | VARCHAR | Primary key.         |
 | title     | VARCHAR | Not null constraint. |
-| artist_id | VARCHAR |                      |
+| artist_id | VARCHAR | Not null constraint. |
 | year      | INT     |                      |
 | duration  | NUMERIC | Not null constraint. |
 
@@ -160,7 +163,7 @@ Dimension table that contains a row for each artist in the Sparkify catalog.
 
 ### Time
 
-Dimension table that contains a row for each timestamp, with columns with pre-prosessed dimensions including day, month, and year to simplify and optimize date-based analytic queries.
+Dimension table that contains a row for each timestamp, with columns with preprocessed dimensions including day, month, and year to simplify and optimize date-based analytic queries.
 
 | column     | type      | notes        |
 | ---------- | --------- | ------------ |
