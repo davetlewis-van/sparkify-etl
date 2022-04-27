@@ -113,17 +113,17 @@ Here is the schema of our data model:
 
 Fact table that contains a row for each song played.
 
-| column      | type      | notes                            |
-| ----------- | --------- | -------------------------------- |
-| songplay_id | INT       | Primary key.                     |
-| start_time  | TIMESTAMP | Not null and unique constraints. |
-| user_id     | BIGINT    | Not null constraint.             |
-| level       | VARCHAR   |                                  |
-| song_id     | VARCHAR   |                                  |
-| artist_id   | VARCHAR   |                                  |
-| session_id  | INT       |                                  |
-| location    | VARCHAR   |                                  |
-| user_agent  | VARCHAR   |                                  |
+| column      | type      | notes                |
+| ----------- | --------- | -------------------- |
+| songplay_id | SERIAL    | Primary key.         |
+| start_time  | TIMESTAMP | Not null constraint. |
+| user_id     | BIGINT    | Not null constraint. |
+| level       | VARCHAR   |                      |
+| song_id     | VARCHAR   |                      |
+| artist_id   | VARCHAR   |                      |
+| session_id  | INT       |                      |
+| location    | VARCHAR   |                      |
+| user_agent  | VARCHAR   |                      |
 
 ### Users
 
